@@ -113,7 +113,123 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                
+                <p><img src="http://otiye40z7.bkt.clouddn.com/%E4%B8%BB%E9%A1%B5.png" alt="title"></p>
+<h2 id="General-概括"><a href="#General-概括" class="headerlink" title="General 概括"></a>General 概括</h2><ul>
+<li>大概是一时兴起打起了博客的注意，在队友（ji you）的推荐下，选择了HEXO + Github ，从此踏上了一条不归路，网上教程很多很多，挑了几个比较详细的开始配置，几乎每条命令都会报错，不是教程不支持新hexo，就是缺这少那，error看到崩溃，甚至还有教程写反步骤，让人几近抓狂，历时一个晚上（白天还要在西电上课），我成功搭建了它，为了方便广大盆友和16、17级的小师弟师妹们，不再走我的弯路，故，我总结了这篇HEXO教程。</li>
+</ul>
+<h2 id="Prophase-前期"><a href="#Prophase-前期" class="headerlink" title="Prophase 前期"></a>Prophase 前期</h2><ul>
+<li>此教程是在Win下实现，虽然ubuntu也可以.但是当时虚拟机跑着东西的</li>
+<li>搭建环境准备（包括node.js和git环境，gitHub账户的配置）</li>
+<li>下载链接如下：</li>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a></li>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
+<li>注册<a href="https://github.com/" target="_blank" rel="external">Github</a>，准备仓库</li>
+<li>在<a href="https://wanwang.aliyun.com/?utm_medium=text&amp;utm_source=bdbrandww&amp;utm_campaign=bdbrand&amp;utm_content=se_103066" target="_blank" rel="external">万网</a>上买一个域名，看自己的喜好买就是了。</li>
+<li>注：下载环境的时候别乱下一气，看好自己的电脑按配置来安装</li>
+</ul>
+<h2 id="配置仓库和SSH秘钥"><a href="#配置仓库和SSH秘钥" class="headerlink" title="配置仓库和SSH秘钥"></a>配置仓库和SSH秘钥</h2><ul>
+<li>注册完成后，登录账号，然后在Github页面的右上方选择New repository进行仓库的创建。<br><img src="http://otiye40z7.bkt.clouddn.com/DKTKU%2846%5BZG$%25@7GAB6N@KX.png" alt=""></li>
+</ul>
+<h3 id="嗯，接着："><a href="#嗯，接着：" class="headerlink" title="嗯，接着："></a>嗯，接着：</h3><p> <img src="http://otiye40z7.bkt.clouddn.com/P%25HW4ES0%5BGZDK2K3%5B0ZDR7X.png" alt=""></p>
+<ul>
+<li>然后点击Create repository即可。</li>
+</ul>
+<h3 id="生成添加密钥"><a href="#生成添加密钥" class="headerlink" title="生成添加密钥"></a>生成添加密钥</h3><p>在终端输入：</p>
+<p>ssh-keygen -t rsa -C “你的Github的注册邮箱”</p>
+<p>最好一直Enter，生成附加密码是个麻烦，等秘钥生成完毕，会得到两个文件id _rsa和id _rsa .pub，用记事本打开id _rsa .pub，<br>把里面的所有内容全部复制，然后进入<br><a href="https://github.com/settings/ssh" target="_blank" rel="external"><br>https://github.com/settings/ssh</a></p>
+<p>然后把复制的内容粘贴到Key中，Title里面的内容随便填，点击Add SSH key按钮即可。</p>
+<ul>
+<li>git命令框中</li>
+<li><code>ssh -T git@github.com</code></li>
+<li>看到警告，输入yes就好</li>
+<li>发现回显 ：Hi 你的github名！ You ve successfully authenticated，····就是成功了</li>
+<li>其中新的hexo可能是弹框让你键入github的用户名密码，不用客气键入它！</li>
+<li>在配置_config.yml最后面加入以下代码：</li>
+<li>deploy:</li>
+<li>type: git</li>
+<li>repo: <a href="http://github.com/wapchief/wapchief.github.io.git（此处，在下图）" target="_blank" rel="external">http://github.com/wapchief/wapchief.github.io.git（此处，在下图）</a></li>
+<li>branch: master<br><img src="http://otiye40z7.bkt.clouddn.com/W_R%5BHNV_W%7D42$WYR4N%7B%29Y%7BV.png" alt=""></li>
+<li>准备工作完成。</li>
+</ul>
+<h2 id="安装-HEXO"><a href="#安装-HEXO" class="headerlink" title="安装 HEXO"></a>安装 HEXO</h2><ul>
+<li>就像打怪一样，装备和环境准备好就可以去打Boss了</li>
+<li>但是这个Boss明显不太容易打。。</li>
+<li>也许会遇到各种各样的问题，有些能百度出来的简单我就不提了，这里遇到的其他大问题我尽可能都写一写</li>
+</ul>
+<h3 id="找个你认为开心的地方建个文件夹"><a href="#找个你认为开心的地方建个文件夹" class="headerlink" title="找个你认为开心的地方建个文件夹"></a>找个你认为开心的地方建个文件夹</h3><p>在文件夹中，鼠标右键</p>
+<p>点击<code>git bash here</code> </p>
+<ul>
+<li>键入命令：<code>npm install -g hexo-cli</code></li>
+<li>继续：<code>npm install hexo --save</code></li>
+</ul>
+<p><img src="http://otiye40z7.bkt.clouddn.com/YJ%5DT7JXK6H%5D4%5D%7DQ8IRGSEKN.png" alt=""> </p>
+<ul>
+<li><code>hexo -v</code>查看是否安装完整</li>
+</ul>
+<p><img src="http://otiye40z7.bkt.clouddn.com/EUY%5DG9PG%25V%28M7$RRW~4RCXC.png" alt=""></p>
+<h3 id="看到这没问题的恭喜你安装成功。"><a href="#看到这没问题的恭喜你安装成功。" class="headerlink" title="看到这没问题的恭喜你安装成功。"></a>看到这没问题的恭喜你安装成功。</h3><h2 id="配置-HEXO"><a href="#配置-HEXO" class="headerlink" title="配置 HEXO"></a>配置 HEXO</h2><h3 id="别松气，这里出现的问题最多"><a href="#别松气，这里出现的问题最多" class="headerlink" title="别松气，这里出现的问题最多"></a>别松气，这里出现的问题最多</h3><ul>
+<li><p>初始化 HEXO</p>
+</li>
+<li><p><code>hexo init</code></p>
+</li>
+<li><p><code>hexo -g</code>静态化网页（渲染？？）</p>
+</li>
+<li><code>hexo -s</code></li>
+<li>如果提示：</li>
+<li><code>INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code></li>
+<li>恭喜你可以，在浏览器中，本地调试预览你的博客了，HEXO默认的主题是landscope<h3 id="然后这三步是出问题出的最多的，我将解决方案汇总在最后的最后。如不成功，请往下找到解决方案再回来继续。"><a href="#然后这三步是出问题出的最多的，我将解决方案汇总在最后的最后。如不成功，请往下找到解决方案再回来继续。" class="headerlink" title="然后这三步是出问题出的最多的，我将解决方案汇总在最后的最后。如不成功，请往下找到解决方案再回来继续。"></a>然后这三步是出问题出的最多的，我将解决方案汇总在最后的最后。如不成功，请往下找到解决方案再回来继续。</h3></li>
+<li>成功显示结果如下：<br><img src="http://otiye40z7.bkt.clouddn.com/9fe4afa0gw1falkk5mnsvj211y0lcten.jpg" alt=""></li>
+<li>在git命令框中 ctrl + c继续</li>
+<li>键入<code>hexo -d</code>上传至github的个人仓库即可<br><img src="http://otiye40z7.bkt.clouddn.com/672406-20151025214644708-53002684.png" alt=""></li>
+</ul>
+<h2 id="后期"><a href="#后期" class="headerlink" title="后期"></a>后期</h2><p>我们的博客就已经完全搭建起来了，在浏览器输入<br>（当然，是你的用户名）：<br><a href="http://angelen10.github.io/" target="_blank" rel="external">http://angelen10.github.io/</a></p>
+<h3 id="然后，万网上域名的解析，以及搭配，从http-angelen10-github-io-跳转至你喜欢的域名，我就不细说了，百度一大堆，正常配置就好。"><a href="#然后，万网上域名的解析，以及搭配，从http-angelen10-github-io-跳转至你喜欢的域名，我就不细说了，百度一大堆，正常配置就好。" class="headerlink" title="然后，万网上域名的解析，以及搭配，从http://angelen10.github.io/跳转至你喜欢的域名，我就不细说了，百度一大堆，正常配置就好。"></a>然后，万网上域名的解析，以及搭配，从<a href="http://angelen10.github.io/跳转至你喜欢的域名，我就不细说了，百度一大堆，正常配置就好。" target="_blank" rel="external">http://angelen10.github.io/跳转至你喜欢的域名，我就不细说了，百度一大堆，正常配置就好。</a></h3><h2 id="装饰你的博客"><a href="#装饰你的博客" class="headerlink" title="装饰你的博客"></a>装饰你的博客</h2><h3 id="安利我的主题：pagase-top"><a href="#安利我的主题：pagase-top" class="headerlink" title="安利我的主题：pagase.top"></a>安利我的主题：<a href="http://pegase.top">pagase.top</a></h3><ul>
+<li>个人觉得我的主题PC端和手机端都很好看</li>
+<li>你可尽情从hexo的theme中寻找你喜欢的主题，或者知乎中，<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">这里</a></li>
+</ul>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p><code>git clone https://github.com/wuchong/jacman.git themes/jacman</code></p>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>　　修改博客目录D:\hexo_config.yml中的theme属性，将其设置为jacman。</p>
+<pre><code>theme: jacman
+</code></pre><h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><p>　　在主题更新之前，备份目录下的_config.yml文件，容易崩</p>
+<p><code>cd themes/jacman</code><br><code>git pull origin master</code>
+　　</p>
+<ul>
+<li>别忘了，配置_config.yml文件</li>
+<li>这些都可以百度到，因为每个人喜好不同，我就不统一写怎么装饰了</li>
+<li>如果实在不行</li>
+<li>请仔细阅读 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 的官方文档，完成对 Hexo 的安装和基本的配置 。</li>
+<li>在主题的配置文件中修改相应的值</li>
+<li>关于博客的图片url，我用的云图库是<a href="https://portal.qiniu.com/create" target="_blank" rel="external">七牛</a></li>
+<li>评论系统多说好像倒闭了。。。然后我自己的评论系统也无限期延迟了</li>
+<li>关于插件问题，可以尽情百度酌情安装，毕竟装多了容易崩，重新来过，比如百度统计，sitmap，rss。</li>
+</ul>
+<h2 id="下面是可能遇到的问题"><a href="#下面是可能遇到的问题" class="headerlink" title="下面是可能遇到的问题"></a>下面是可能遇到的问题</h2><p>先安利几个大大的文章<br><a href="http://www.cnblogs.com/laotanrensheng/p/4909718.html" target="_blank" rel="external">hexo3和Github搭建个人博客遇到问题和解决方法汇总！</a></p>
+<p><a href="http://www.jianshu.com/p/67c57c70f275" target="_blank" rel="external">hexo 部署至Git遇到的坑</a></p>
+<p><a href="http://blog.csdn.net/wapchief/article/details/70801995" target="_blank" rel="external">使用hexo+github搭建个人博客遇到过哪些坑</a></p>
+<p><a href="http://www.jianshu.com/p/cea41e5c9b2a?open_source=weibo_search" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a></p>
+<p><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="external">使用hexo搭建github.io博客</a></p>
+<p>都给了我很大的帮助，在此谢过。</p>
+<p>以下大部分解决方案来源其中</p>
+<p>然后我遇到的问题都比较奇葩，</p>
+<h3 id="域名绑定后，解析没问题，无法跳转"><a href="#域名绑定后，解析没问题，无法跳转" class="headerlink" title="域名绑定后，解析没问题，无法跳转"></a>域名绑定后，解析没问题，无法跳转</h3><p>解决：在本地source文件夹和github仓库中创建CNAME文件，并在其中写入你自己的域名，分别上传</p>
+<h3 id="fatal-Could-not-read-from-remote-repository"><a href="#fatal-Could-not-read-from-remote-repository" class="headerlink" title="fatal: Could not read from remote repository."></a><code>fatal: Could not read from remote repository.</code></h3><p><code>致命:无法读取远程存储库。</code><br><code>Please make sure you have the correct access rights and the repository exists.</code><br><code>请确保你有正确的访问权限和存储库的存在。</code><br> 出现这种错误，可能是配置_config.yml出了问题，下面deploy的代码，从ssh换成http协议试试，或者https。</p>
+<h3 id="ERROR-Deployer-not-found-git"><a href="#ERROR-Deployer-not-found-git" class="headerlink" title="ERROR Deployer not found: git"></a>ERROR Deployer not found: git</h3><ul>
+<li>这个问题最恶心，除了执行下面命令外：</li>
+<li><code>npm install hexo-deployer-git --save</code></li>
+<li>还要把_config.yml文件中的deploy:<br>type: github改成git，</li>
+<li>not found：git 就把github改成 git，</li>
+<li>not found：github 就把git改成github</li>
+<li>百试百灵<h3 id="如果实在没找到问题，看看环境搭的有问题没"><a href="#如果实在没找到问题，看看环境搭的有问题没" class="headerlink" title="如果实在没找到问题，看看环境搭的有问题没"></a>如果实在没找到问题，看看环境搭的有问题没</h3></li>
+<li>node -v</li>
+<li>npm -v</li>
+<li>git –version</li>
+<li>hexo -v<h3 id="页面不能正常显示，或者404"><a href="#页面不能正常显示，或者404" class="headerlink" title="页面不能正常显示，或者404"></a>页面不能正常显示，或者404</h3></li>
+<li>检查根目录下的_config.yml文件是否配置正确，注意变量:后要加空格。</li>
+</ul>
+<h3 id="ssh密钥文件已存在"><a href="#ssh密钥文件已存在" class="headerlink" title="ssh密钥文件已存在"></a>ssh密钥文件已存在</h3><ul>
+<li>能忍？删了，然后继续执行</li>
+</ul>
+
             </div>
 
             <!-- Post Comments -->
